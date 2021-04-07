@@ -1,0 +1,30 @@
+server:
+  port: 8096
+
+spring:
+  application:
+    name: spring-cloud-netflix-zuul
+
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+
+#actuator配置
+info:
+  description: Created by sungm. This is spring cloud neflix demo project, application name is ${spring.application.name},server port is ${server.port}.
+
+#网关配置
+zuul:
+  #配置前缀
+  prefix: /api
+  routes:
+    #配置服务的映射路由, 访问netflix-eureka-client通过路由/client/**进行访问
+    netflix-eureka-client.id: netflix-eureka-client
+    netflix-eureka-client.serviceId: netflix-eureka-client
+    netflix-eureka-client.path: /client/**
+  #忽略所有的服务，不能通过服务名进行访问
+  ignoredServices: "*"

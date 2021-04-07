@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: configserver
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          #采用本地配置
+          searchLocations: classpath:/config
+
+server:
+  port: 9999
+
+

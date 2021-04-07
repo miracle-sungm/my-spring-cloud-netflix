@@ -1,0 +1,12 @@
+/spring-cloud-api/target/
+/spring-cloud-server-provider/target/
+/spring-cloud-server-consumer/target/
+/spring-cloud-netflix-eureka-client/target/
+/spring-cloud-netflix-eureka-server/target/
+/spring-cloud-netflix-ribbon/target/
+/spring-cloud-netflix-feign/target/
+/spring-cloud-netflix-hystrix/target/
+/spring-cloud-netflix-hystrix-dashboard/target/
+/spring-cloud-netflix-zuul/target/
+/spring-cloud-config-server/target/
+/spring-cloud-config-client/target/

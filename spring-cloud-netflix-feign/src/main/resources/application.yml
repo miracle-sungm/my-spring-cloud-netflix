@@ -1,0 +1,18 @@
+server:
+  port: 8093
+
+spring:
+  application:
+    name: netflix-eureka-feign
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+  instance:
+    instance-id: ${spring.application.name}-${server.port}
+
+#actuator配置
+info:
+  description: Created by sungm. This is spring cloud neflix demo project, application name is ${spring.application.name},server port is ${server.port}.
+

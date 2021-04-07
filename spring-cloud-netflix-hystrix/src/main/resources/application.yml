@@ -1,0 +1,22 @@
+server:
+  port: 8094
+
+spring:
+  application:
+    name: netflix-eureka-hystrix
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+  instance:
+    instance-id: ${spring.application.name}-${server.port}
+
+#actuator配置
+info:
+  description: Created by sungm. This is spring cloud neflix demo project, application name is ${spring.application.name},server port is ${server.port}.
+
+#开启客户端服务降级
+feign:
+  hystrix:
+    enabled: true
